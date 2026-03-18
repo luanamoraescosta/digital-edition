@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mode und Heim Issue 25/1904</title>
+
+    <link rel="stylesheet" href="project_coding_digital_edition.css" />
+    <link
+      rel="stylesheet"
+      href="https://db.onlinewebfonts.com/c/329f73092132a105e320882db64bb999?family=Albert+Text"
+    />
+
+    <script defer src="project_coding_digital_edition.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="centered fbox">
+        Digital Edition of “Mode und Heim”, Issue 25/1904
+      </h1>
+
+      <nav id="navigation" aria-label="Page navigation">
+        <button id="previous" type="button" aria-label="Previous page">&lt;</button>
+        <div id="page-buttons" role="group" aria-label="Select page"></div>
+        <button id="next" type="button" aria-label="Next page">&gt;</button>
+      </nav>
+
+      <section class="tools" aria-label="Annotation tools">
+        <button id="toggle-anno" type="button">Annotate</button>
+
+        <label class="tool-label">
+          Target
+          <select id="anno-target">
+            <option value="image">Image</option>
+            <option value="layout">Layout</option>
+          </select>
+        </label>
+
+        <button id="export-anno" type="button">Export JSON</button>
+        <button id="import-anno" type="button">Import JSON</button>
+        <button id="clear-page" type="button">Clear page</button>
+      </section>
+    </header>
+
+    <main id="main-content" class="centered">
+      <section class="side-by-side">
+        <!-- Facsimile -->
+        <div id="image-container">
+          <h2 class="card">Facsimile</h2>
+
+          <figure class="figure-wrap" id="magnifier-wrap">
+            <img
+              id="page-image"
+              class="card"
+              alt="Facsimile of the selected page"
+            />
+            <!-- Annotation overlay for IMAGE -->
+            <svg id="anno-image" class="anno-layer" aria-label="Image annotations"></svg>
+          </figure>
+        </div>
+
+        <!-- Layout -->
+        <div id="layout-container">
+          <h2 class="card">Layout</h2>
+
+          <div id="svg-stage" class="card" aria-label="Layout SVG"></div>
+
+          <!-- Annotation overlay for LAYOUT -->
+          <svg id="anno-layout" class="anno-layer" aria-label="Layout annotations"></svg>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

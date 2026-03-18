@@ -1,0 +1,207 @@
+:root{
+  --ink: #2f4f4f;
+  --paper: #fae3af;
+  --bg: hwb(42 89% 3%);
+  --shadow: 3px 3px 0px rgba(0,0,0,.5);
+  --border: 1px solid #000;
+  --accent: #9d74db;
+  --hoverFill: rgb(181, 217, 218);
+}
+
+body{
+  background-color: var(--bg);
+  margin: 0;
+  padding: 24px 0 48px;
+}
+
+.centered{ text-align: center; }
+
+.fbox{
+  border: 3px solid var(--ink);
+  background-color: var(--paper);
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 75%;
+  font-family: "Albert Text", serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-content{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.card{
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background: var(--paper);
+}
+
+h2{
+  font-family: "Albert Text", serif;
+  text-align: center;
+  margin: 0 0 12px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navigation{
+  text-align: center;
+  padding: 32px 0 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tools{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+}
+
+.tool-label{
+  font-family:"Albert Text", serif;
+  background: var(--paper);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 6px 10px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+select{
+  font-family:"Albert Text", serif;
+  border: var(--border);
+  background: #fff7dc;
+}
+
+button{
+  background-color: var(--paper);
+  font-family:"Albert Text", serif;
+  color: black;
+  font-size: large;
+  width: 120px;
+  height: 35px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+#previous, #next{ width: 45px; }
+
+button:focus-visible{
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.button-clicked{
+  background-color: rgb(156, 135, 156);
+}
+
+button:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.side-by-side{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 900px){
+  #main-content{ padding-left: 5%; padding-right: 5%; }
+  .side-by-side{ grid-template-columns: 1fr; }
+  .fbox{ max-width: 92%; }
+}
+
+/* Facsimile */
+.figure-wrap{
+  margin: 0;
+  position: relative;
+}
+
+#page-image{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout container must be relative for overlay positioning */
+#layout-container{
+  position: relative;
+}
+
+/* Stage that holds fetched SVG */
+#svg-stage{
+  padding: 0;
+  overflow: hidden;
+}
+
+#svg-stage svg{
+  width: 100%;
+  height: auto;
+  display: block;
+  fill: var(--paper);
+  stroke: black;
+}
+
+#svg-stage rect:hover{
+  fill: var(--hoverFill);
+}
+
+/* Annotation layers */
+.anno-layer{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.anno-layer.active{
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.anno-rect{
+  fill: rgba(157, 116, 219, 0.18);
+  stroke: #9d74db;
+  stroke-width: 2;
+}
+
+.anno-label{
+  font: 12px "Albert Text", serif;
+  fill: #2f4f4f;
+  paint-order: stroke;
+  stroke: rgba(250, 227, 175, .9);
+  stroke-width: 3px;
+}
+
+/* Magnifier */
+.img-magnifier-glass{
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+}
+
+/* Hide magnifier while annotating */
+.magnifier-off .img-magnifier-glass{
+  display: none !important;
+}
