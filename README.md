@@ -16,7 +16,7 @@ The prototype includes:
 
 ## Context
 
-The course "Coding the Digital Edition" introduced the theory and practice of digital scholarly editing: how to encode texts with structured markup ([TEI/XML](https://tei-c.org/)), how to think about editorial decisions, and how to publish historical sources in a way that is both human-readable and machine-processable. This prototype reflects what I learned during those classes.
+The course "Coding the Digital Edition" introduced the theory and practice of digital scholarly editing: how to encode texts with structured markup ([TEI/XML](https://tei-c.org/)), how to think about editorial decisions, and how to publish historical sources in a way that is both human-readable and machine-processable. This prototype reflects what I learned during those classes, but focusing on SVG files and image annotation.
 
 ## Source material
 
